@@ -20,7 +20,6 @@ public class Text {
     }
 
     public String task(String[] taskWords) {
-        //new String[]{"Hello", "from","the","outside"};
         String[] result = new String[taskWords.length];
         int counter = 0;
         for (int i = 0; i < taskWords.length; i++) {
