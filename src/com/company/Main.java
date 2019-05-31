@@ -65,7 +65,8 @@ public class Main {
 
         Task task = new Task(new String[]{"Hello", "from","the","outside"},text);
         String zz = text.getSentences()[1].toString();
+        System.out.println(text.task(new String[]{"Hello", "from","the","outside"}));
 
-        System.out.println(task.numberNine());
+        System.err.println(task.numberNine());
     }
 }

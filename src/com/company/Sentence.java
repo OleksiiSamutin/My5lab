@@ -11,7 +11,7 @@ public class Sentence {
     private Object[] sentenceElements;
 
 
-    public Sentence(String sentenceString){
+    public Sentence(String sentenceString) {
 
         Pattern p = Pattern.compile("[\\p{L}\\p{M}\\p{N}]+|[\\p{P}\\p{S}]");
         List<String> list = new ArrayList<String>();
@@ -28,9 +28,9 @@ public class Sentence {
         for (int i = 0; i < sentenceElements.length; i++) {
             if (Punctuation.getPunctuationSymbols().contains(split[i])) {
                 sentenceElements[i] = new Punctuation(split[i]);
-            }else if (split[i].matches("-?\\d+(\\.\\d+)?")) {
+            } else if (split[i].matches("-?\\d+(\\.\\d+)?")) {
                 sentenceElements[i] = new Number(split[i]);
-            }else {
+            } else {
                 sentenceElements[i] = new Word(split[i]);
             }
 
@@ -43,16 +43,24 @@ public class Sentence {
     }
 
 
-
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (Object value : sentenceElements) {
-            builder.append(value+" ");
+            builder.append(value + " ");
         }
         String text = builder.toString();
 
 
         return text;
+    }
+
+    public boolean isWordInSentence(String taskWord) {
+        for (int i = 0; i < sentenceElements.length; i++) {
+            if (sentenceElements[i].toString().equals(taskWord))
+                return true;
+
+        }
+        return false;
     }
 }

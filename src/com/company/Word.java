@@ -19,6 +19,23 @@ public class Word extends Object{
         return result;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Word) {
+            Word word = (Word) obj;
+            if (letters.length == word.letters.length) {
+                for (int i = 0; i < letters.length; i++) {
+                    if (!letters[i].equals(word.letters[i])) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public Letter[] getLetters() {
         return letters;
     }
