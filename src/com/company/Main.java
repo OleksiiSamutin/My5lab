@@ -64,9 +64,14 @@ public class Main {
                 "Doesn't tear you apart anymore. ");
 
         Task task = new Task(new String[]{"Hello", "from","the","outside"},text);
-        String zz = text.getSentences()[1].toString();
-        System.out.println(text.task(new String[]{"Hello", "from","the","outside"}));
-
+        // Правильная реализация, без нарушения инкапсуляции.
+        Word[] testWords =new Word[4];
+        testWords[0]= new Word("Hello");
+        testWords[1]= new Word("from");
+        testWords[2]= new Word("the");
+        testWords[3]= new Word("outside");
+        System.out.println(text.task(testWords));
+        // Неправильная реализация, нарушение инкапсуляции.
         System.err.println(task.numberNine());
     }
 }

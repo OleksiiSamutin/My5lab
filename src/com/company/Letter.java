@@ -10,7 +10,13 @@ public class Letter {
     public String toString() {
         return "" + aChar;
     }
-
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Letter) {
+            return ((Letter)obj).aChar == aChar;
+        }
+        return false;
+    }
     public char getaChar() {
         return aChar;
     }

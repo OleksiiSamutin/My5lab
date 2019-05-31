@@ -19,7 +19,7 @@ public class Text {
         return sentences;
     }
 
-    public String task(String[] taskWords) {
+    public String task(Word[] taskWords) {
         String[] result = new String[taskWords.length];
         int counter = 0;
         for (int i = 0; i < taskWords.length; i++) {

@@ -55,9 +55,9 @@ public class Sentence {
         return text;
     }
 
-    public boolean isWordInSentence(String taskWord) {
+    public boolean isWordInSentence(Word taskWord) {
         for (int i = 0; i < sentenceElements.length; i++) {
-            if (sentenceElements[i].toString().equals(taskWord))
+            if (sentenceElements[i].equals(taskWord))
                 return true;
 
         }
